@@ -1,17 +1,8 @@
-//const KnowledgeItemSchema = require('../KnowledgeValidation');
+const logger = require('../config/logger'); 
 
 class KnowledgeController {
   constructor(service) {
     this.service = service;
-    this.getAll = this.getAll.bind(this);
-    this.create = this.create.bind(this);
-    this.update = this.update.bind(this);
-    this.delete = this.delete.bind(this);
-    this.getById = this.getById.bind(this);
-    this.findByTag = this.findByTag.bind(this);
-    this.findByTitle = this.findByTitle.bind(this);
-    this.findBySubtitle = this.findBySubtitle.bind(this);
-    //this.validate = this.validate.bind(this);
   }
 /*
   validate(req, res, next) {
@@ -23,87 +14,106 @@ class KnowledgeController {
   }
     */
 
-  async create(req, res) {
+  create = async (req, res) => {
     try {
       const item = await this.service.create(req.body);
+      logger.info('Knowledge item created: ' + item.title); // Log creation event
       res.status(201).json(item);
     } catch (err) {
+      logger.error('Error creating knowledge item: ' + err.message); // Log error
       res.status(500).json({ message: 'Error creating knowledge item', error: err.message });
     }
   }
 
-  async getAll(req, res) {
+  getAll = async (req, res) => {
     try {
       const items = await this.service.getAll();
+      logger.info('Fetched all knowledge items');
       res.status(200).json(items);
     } catch (err) {
+      logger.error('Error retrieving knowledge items: ' + err.message); // Log error
       res.status(500).json({ message: 'Error retrieving knowledge items', error: err.message });
     }
   }
 
-  async getById(req, res) {
+  getById = async (req, res) => {
     try {
       const item = await this.service.getById(req.params.id);
       if (!item) {
+        logger.warn(`Knowledge item with ID ${req.params.id} not found`); // Log warning for not found item
         return res.status(404).json({ message: 'Knowledge item not found' });
       }
+      logger.info(`Fetched knowledge item with ID: ${req.params.id}`); // Log fetching specific item
       res.status(200).json(item);
     } catch (err) {
+      logger.error('Error retrieving knowledge item: ' + err.message); // Log error
       res.status(500).json({ message: 'Error retrieving knowledge item', error: err.message });
     }
   }
 
- async update(req, res) {
+  update = async (req, res) => {
     try {
       const item = await this.service.update(req.params.id, req.body);
       if (!item) {
+        logger.warn(`Knowledge item with ID ${req.params.id} not found to update`); // Log warning for not found item
         return res.status(404).json({ message: 'Knowledge item not found to update' });
       }
+      logger.info(`Knowledge item with ID ${req.params.id} updated successfully`); // Log successful update
       res.status(200).json(item);
     } catch (err) {
+      logger.error('Error updating knowledge item: ' + err.message); // Log error
       res.status(500).json({ message: 'Error updating knowledge item', error: err.message });
     }
   }
 
-  async delete(req, res) {
+  delete = async (req, res) => {
     try {
       const item = await this.service.delete(req.params.id);
       if (!item) {
+        logger.warn(`Knowledge item with ID ${req.params.id} not found to delete`); // Log warning for not found item
         return res.status(404).json({ message: 'Knowledge item not found to delete' });
       }
+      logger.info(`Knowledge item with ID ${req.params.id} deleted successfully`); // Log successful deletion
       res.status(200).json({ message: 'Knowledge item deleted successfully' });
     } catch (err) {
+      logger.error('Error deleting knowledge item: ' + err.message); // Log error
       res.status(500).json({ message: 'Error deleting knowledge item', error: err.message });
     }
   }
 
-  async findByTag(req, res) {
-    try {
-      const items = await this.service.findByTag(req.params.tag);
-      res.status(200).json(items);
-    } catch (err) {
-      res.status(500).json({ message: 'Error finding items by tag', error: err.message });
-    }
-  }
-
-  async findByTitle(req, res) {
+  findByTag = async (req, res) => {
     try {
       const items = await this.service.findByTitle(req.params.text);
+      logger.info(`Found ${items.length} knowledge items for title: ${req.params.text}`); // Log items found by title
       res.status(200).json(items);
     } catch (err) {
+      logger.error('Error finding items by title: ' + err.message); // Log error
       res.status(500).json({ message: 'Error finding items by title', error: err.message });
     }
   }
 
-  async findBySubtitle(req, res) {
+  findByTitle = async (req, res) => {
     try {
-      const items = await this.service.findBySubtitle(req.params.text);
+      const items = await this.service.findByTitle(req.params.text);
+      logger.info(`Found ${items.length} knowledge items for title: ${req.params.text}`); // Log items found by title
       res.status(200).json(items);
     } catch (err) {
-      res.status(500).json({ message: 'Error finding items by subtitle', error: err.message });
+      logger.error('Error finding items by title: ' + err.message); // Log error
+      res.status(500).json({ message: 'Error finding items by title', error: err.message });
     }
   }
 
+  findBySubtitle = async (req, res) => {
+    try {
+      const items = await this.service.findBySubtitle(req.params.text);
+      logger.info(`Found ${items.length} knowledge items for subtitle: ${req.params.text}`); // Log items found by subtitle
+      res.status(200).json(items);
+    } catch (err) {
+      logger.error('Error finding items by subtitle: ' + err.message); // Log error
+      res.status(500).json({ message: 'Error finding items by subtitle', error: err.message });
+    }
+  }
 }
+
 
 module.exports = KnowledgeController;
