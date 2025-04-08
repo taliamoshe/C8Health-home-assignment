@@ -27,8 +27,9 @@ async function startUp() {
     }
   }
   
-  app.listen(config.port, async () => {
-    console.log(' Server started on port ${config.port}');
-    await startUp(); // Generate sample data when the server starts
-  });
+const port = process.env.PORT || 3000;
 
+app.listen(port, async () => {
+  console.log(`Server started on port ${port}`);
+  await startUp(); // Generate sample data when the server starts
+});

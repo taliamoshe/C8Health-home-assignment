@@ -12,7 +12,7 @@ const logger = winston.createLogger({
       level: 'info', // Logs with 'info' level or higher
       format: winston.format.combine(
         winston.format.timestamp(),
-        winston.format.json() // Store logs in JSON format
+        winston.format.json() 
       ),
     }),
   ],

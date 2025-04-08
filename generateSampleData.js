@@ -37,7 +37,7 @@ async function generateSampleData() {
 
     } catch (err) {
       console.error(`❌ Error creating item #${i + 1}:`, err.message);
-      await wait(500);
+      await wait(300);
     }
   }
 

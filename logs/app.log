@@ -29,3 +29,25 @@
 {"level":"info","message":"Knowledge item created: Version Test","timestamp":"2025-04-08T08:13:04.836Z"}
 {"level":"info","message":"Knowledge item with ID 101 updated successfully","timestamp":"2025-04-08T08:13:16.487Z"}
 {"level":"error","message":"Error deleting knowledge item: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed","timestamp":"2025-04-08T08:14:40.444Z"}
+{"level":"info","message":"Knowledge item created: Version Test","timestamp":"2025-04-08T08:54:41.357Z"}
+{"level":"info","message":"Knowledge item with ID 202 updated successfully","timestamp":"2025-04-08T08:55:08.099Z"}
+{"level":"info","message":"Knowledge item with ID 202 deleted successfully","timestamp":"2025-04-08T09:57:05.029Z"}
+{"level":"warn","message":"Knowledge item with ID 202 not found","timestamp":"2025-04-08T09:57:20.081Z"}
+{"level":"info","message":"Knowledge item created: Heart Health","timestamp":"2025-04-08T10:12:31.931Z"}
+{"level":"info","message":"Fetched all knowledge items","timestamp":"2025-04-08T10:12:38.963Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 2","timestamp":"2025-04-08T10:12:49.258Z"}
+{"level":"info","message":"Knowledge item with ID 2 updated successfully","timestamp":"2025-04-08T10:13:21.513Z"}
+{"level":"info","message":"Found 0 knowledge items for title: undefined","timestamp":"2025-04-08T10:13:56.243Z"}
+{"level":"info","message":"Found 2 knowledge items for title: Heart","timestamp":"2025-04-08T10:14:14.071Z"}
+{"level":"info","message":"Found 1 knowledge items for subtitle: Overview","timestamp":"2025-04-08T10:14:22.552Z"}
+{"level":"info","message":"Found 0 knowledge items for title: undefined","timestamp":"2025-04-08T10:20:42.219Z"}
+{"level":"info","message":"Found 0 knowledge items for title: undefined","timestamp":"2025-04-08T10:21:32.079Z"}
+{"level":"info","message":"Fetched all knowledge items","timestamp":"2025-04-08T10:21:43.646Z"}
+{"level":"info","message":"Found 42 knowledge items for tag: cardiology","timestamp":"2025-04-08T10:49:37.782Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 39","timestamp":"2025-04-08T10:51:33.923Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 100","timestamp":"2025-04-08T15:16:17.816Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 100","timestamp":"2025-04-08T15:48:11.534Z"}
+{"level":"error","message":"Error retrieving knowledge item: Failed to get knowledge item by ID: Item not found","timestamp":"2025-04-08T15:48:46.895Z"}
+{"level":"error","message":"Error retrieving knowledge item: Failed to get knowledge item by ID: Item not found","timestamp":"2025-04-08T15:53:28.267Z"}
+{"level":"error","message":"Error retrieving knowledge item: Failed to get knowledge item by ID: Item not found","timestamp":"2025-04-08T15:53:36.371Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 100","timestamp":"2025-04-08T16:01:55.457Z"}

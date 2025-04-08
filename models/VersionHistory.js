@@ -13,7 +13,7 @@ const VersionHistory = sequelize.define('VersionHistory', {
   title: { type: DataTypes.STRING, allowNull: false },
   subtitle: { type: DataTypes.STRING, allowNull: false },
   vettedDate: { type: DataTypes.DATE, allowNull: false },
-  content: { type: DataTypes.STRING, allowNull: false },
+  content: { type: DataTypes.TEXT, allowNull: false },
   tags: { type: DataTypes.JSON, allowNull: true },
   updatedAt: { type: DataTypes.DATE, allowNull: false, defaultValue: DataTypes.NOW }
 });
