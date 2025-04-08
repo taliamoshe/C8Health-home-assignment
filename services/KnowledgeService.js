@@ -1,4 +1,4 @@
-const { KnowledgeItem, Tag } = require('../models');
+const { KnowledgeItem, Tag, VersionHistory } = require('../models');
 const { Op } = require('sequelize');
 
 
@@ -33,12 +33,23 @@ class KnowledgeService {
     const item = await KnowledgeItem.findOne({ where: { KnowledgeItem_id: id } });
     if (!item) return null; //there is no item with this ID, nothing to update... // we can create anyway if requested!
     
+    const oldItem = { ...item.get({ plain: true }) };
+
+    const previousVersion = await VersionHistory.findOne({ where: { KnowledgeItem_id: id } });
+    if (previousVersion) {
+      await previousVersion.destroy();
+    }
+
     await VersionHistory.create({
       KnowledgeItem_id: id,
-      content: item.content, 
-      updatedAt: new Date()   
+      title: oldItem.title,
+      subtitle: oldItem.subtitle,
+      content: oldItem.content,
+      vettedDate: oldItem.vettedDate,
+      tags: JSON.stringify(oldItem.tags),  
+      updatedAt: new Date(),
     });
-
+  
     await item.update(itemData); //exist!
 
     if (tags) {
@@ -96,6 +107,13 @@ class KnowledgeService {
       include: Tag
     });
   }
+
+  getVersion = async (id) => {
+    return await VersionHistory.findOne({ where: { KnowledgeItem_id: id } });
+  };
+
 }
+
+
 
 module.exports = KnowledgeService;

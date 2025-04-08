@@ -27,7 +27,7 @@ class KnowledgeController {
 
   getAll = async (req, res) => {
     try {
-      const items = await this.service.getAll();
+      const items = await this.service.getAll();// For now we can do getAll, when we have a lot of data of items we should use pagination
       logger.info('Fetched all knowledge items');
       res.status(200).json(items);
     } catch (err) {
@@ -102,6 +102,18 @@ class KnowledgeController {
       res.status(500).json({ message: 'Error finding items by title', error: err.message });
     }
   }
+  
+  getVersion = async (req, res) => {
+    try {
+      const version = await this.service.getVersion(req.params.id);
+      if (!version) {
+        return res.status(404).json({ message: 'No version history found for this item' });
+      }
+      res.status(200).json(version);
+    } catch (err) {
+      res.status(500).json({ message: 'Error retrieving version history', error: err.message });
+    }
+  }
 
   findBySubtitle = async (req, res) => {
     try {
@@ -113,7 +125,10 @@ class KnowledgeController {
       res.status(500).json({ message: 'Error finding items by subtitle', error: err.message });
     }
   }
+  
 }
+
+
 
 
 module.exports = KnowledgeController;

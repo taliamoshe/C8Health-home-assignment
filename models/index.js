@@ -1,8 +1,10 @@
 const { Sequelize } = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/SQLiteHandler');
 
 const KnowledgeItem = require('./KnowledgeItem');
 const Tag = require('./Tag');
+const VersionHistory = require('./VersionHistory'); 
+
 
 //many-to-many connection between the tables: KnowledgeItem and Tag
 KnowledgeItem.belongsToMany(Tag, {
@@ -20,5 +22,6 @@ Tag.belongsToMany(KnowledgeItem, {
 module.exports = {
   KnowledgeItem,
   Tag,
+  VersionHistory,
   sequelize
 };
