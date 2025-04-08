@@ -5,6 +5,8 @@ const sequelize = require('../config/SQLiteHandler');
 const Tag = sequelize.define('Tag', {
   tag_id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true }, //PK
   tag: { type: DataTypes.STRING, unique: true, allowNull: false } 
+},{
+  timestamps: false 
 });
 
 module.exports = Tag;

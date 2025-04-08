@@ -51,3 +51,40 @@
 {"level":"error","message":"Error retrieving knowledge item: Failed to get knowledge item by ID: Item not found","timestamp":"2025-04-08T15:53:28.267Z"}
 {"level":"error","message":"Error retrieving knowledge item: Failed to get knowledge item by ID: Item not found","timestamp":"2025-04-08T15:53:36.371Z"}
 {"level":"info","message":"Fetched knowledge item with ID: 100","timestamp":"2025-04-08T16:01:55.457Z"}
+{"level":"error","message":"Error creating knowledge item: Failed to create knowledge item: SQLITE_BUSY: database is locked","timestamp":"2025-04-08T16:57:01.501Z"}
+{"level":"error","message":"Error creating knowledge item: Failed to create knowledge item: SQLITE_BUSY: database is locked","timestamp":"2025-04-08T16:58:32.862Z"}
+{"level":"error","message":"Error creating knowledge item: Failed to create knowledge item: SQLITE_BUSY: database is locked","timestamp":"2025-04-08T17:12:27.983Z"}
+{"level":"error","message":"Error creating knowledge item: Failed to create knowledge item: SQLITE_BUSY: database is locked","timestamp":"2025-04-08T17:15:52.615Z"}
+{"level":"info","message":"Fetched all knowledge items","timestamp":"2025-04-08T17:16:25.269Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 100","timestamp":"2025-04-08T17:17:21.599Z"}
+{"level":"info","message":"Knowledge item with ID 100 deleted successfully","timestamp":"2025-04-08T17:18:44.174Z"}
+{"level":"error","message":"Error retrieving knowledge item: Failed to get knowledge item by ID: Item not found","timestamp":"2025-04-08T17:18:50.661Z"}
+{"level":"error","message":"Error updating knowledge item: Failed to update knowledge item: Cannot destructure property 'tags' of 'data' as it is undefined.","timestamp":"2025-04-08T17:19:36.601Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 89","timestamp":"2025-04-08T17:20:56.220Z"}
+{"level":"error","message":"Error updating knowledge item: Failed to update knowledge item: SQLITE_BUSY: database is locked","timestamp":"2025-04-08T17:21:43.796Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 2","timestamp":"2025-04-08T17:28:23.234Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 2","timestamp":"2025-04-08T17:28:52.025Z"}
+{"level":"error","message":"Error updating knowledge item: Failed to update knowledge item: Cannot destructure property 'tags' of 'data' as it is undefined.","timestamp":"2025-04-08T17:29:35.404Z"}
+{"level":"error","message":"Error updating knowledge item: Failed to update knowledge item: Item not found","timestamp":"2025-04-08T17:29:50.094Z"}
+{"level":"error","message":"Error updating knowledge item: Failed to update knowledge item: Cannot destructure property 'tags' of 'data' as it is undefined.","timestamp":"2025-04-08T17:30:09.078Z"}
+{"level":"error","message":"Error updating knowledge item: Failed to update knowledge item: SQLITE_BUSY: database is locked","timestamp":"2025-04-08T17:30:44.806Z"}
+{"level":"info","message":"Knowledge item with ID 1 updated successfully","timestamp":"2025-04-08T17:39:00.460Z"}
+{"level":"info","message":"Knowledge item created: Test Title","timestamp":"2025-04-08T17:39:46.334Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 51","timestamp":"2025-04-08T17:40:02.832Z"}
+{"level":"info","message":"Knowledge item with ID 51 updated successfully","timestamp":"2025-04-08T17:40:16.162Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 51","timestamp":"2025-04-08T17:40:31.072Z"}
+{"level":"error","message":"Error creating knowledge item: Failed to create knowledge item: SQLITE_BUSY: database is locked","timestamp":"2025-04-08T17:45:42.255Z"}
+{"level":"error","message":"Error creating knowledge item: Failed to create knowledge item: SQLITE_BUSY: database is locked","timestamp":"2025-04-08T17:46:30.032Z"}
+{"level":"info","message":"Knowledge item created: Test Title","timestamp":"2025-04-08T17:46:46.474Z"}
+{"level":"info","message":"Fetched all knowledge items","timestamp":"2025-04-08T17:46:58.618Z"}
+{"level":"info","message":"Knowledge item with ID 52 updated successfully","timestamp":"2025-04-08T17:47:21.112Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 52","timestamp":"2025-04-08T17:47:53.719Z"}
+{"level":"info","message":"Knowledge item with ID 52 deleted successfully","timestamp":"2025-04-08T17:48:37.828Z"}
+{"level":"error","message":"Error retrieving knowledge item: Failed to get knowledge item by ID: Item not found","timestamp":"2025-04-08T17:48:43.288Z"}
+{"level":"error","message":"Error creating knowledge item: Failed to create knowledge item: SQLITE_BUSY: database is locked","timestamp":"2025-04-08T17:53:04.960Z"}
+{"level":"info","message":"Knowledge item created: Test Title","timestamp":"2025-04-08T17:53:14.480Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 102","timestamp":"2025-04-08T17:53:37.829Z"}
+{"level":"info","message":"Knowledge item with ID 102 deleted successfully","timestamp":"2025-04-08T17:55:20.692Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 1","timestamp":"2025-04-08T17:55:44.997Z"}
+{"level":"info","message":"Knowledge item with ID 1 updated successfully","timestamp":"2025-04-08T17:55:59.277Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 1","timestamp":"2025-04-08T17:56:11.316Z"}

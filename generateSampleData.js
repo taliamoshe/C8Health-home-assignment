@@ -10,7 +10,7 @@ const tags = [
 const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function generateSampleData() {
-  console.log('🔌 Connecting to DB and generating sample data...\n');
+  console.log('Connecting to DB and generating sample data...\n');
 
   for (let i = 0; i < 100; i++) {
     try {
@@ -41,7 +41,7 @@ async function generateSampleData() {
     }
   }
 
-  console.log('\n🎉 Sample data created successfully!');
+  console.log('\nSample data created successfully!');
 }
 
 module.exports = generateSampleData;

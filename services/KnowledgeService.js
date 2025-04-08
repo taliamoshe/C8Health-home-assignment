@@ -37,31 +37,16 @@ class KnowledgeService {
   }
 
 
-  update = async (id, data) => { //BY ID
+  update = async (id, data) => {//by ID
     try {
       const { tags, ...itemData } = data;
-      const item = await KnowledgeItem.findOne({ where: { KnowledgeItem_id: id } });
+      const item = await KnowledgeItem.findOne({ where: { KnowledgeItem_id: id }, include: Tag });
       if (!item) throw new Error('Item not found');
-
+  
       const oldItem = { ...item.get({ plain: true }) };
-
-      const previousVersion = await VersionHistory.findOne({ where: { KnowledgeItem_id: id } });
-      if (previousVersion) {
-        await previousVersion.destroy();
-      }
-
-      await VersionHistory.create({
-        KnowledgeItem_id: id,
-        title: oldItem.title,
-        subtitle: oldItem.subtitle,
-        content: oldItem.content,
-        vettedDate: oldItem.vettedDate,
-        tags: JSON.stringify(oldItem.tags),  
-        updatedAt: new Date(),
-      });
-
-      await item.update(itemData); //exist!
-
+  
+      await item.update(itemData);
+  
       if (tags) {
         const tagInstances = await Promise.all(
           tags.map(async (tagText) => {
@@ -71,12 +56,28 @@ class KnowledgeService {
         );
         await item.setTags(tagInstances);
       }
-
+  
+      const previousVersion = await VersionHistory.findOne({ where: { KnowledgeItem_id: id } });
+      if (previousVersion) {
+        await previousVersion.destroy();
+      }
+  
+      await VersionHistory.create({
+        KnowledgeItem_id: id,
+        title: oldItem.title,
+        subtitle: oldItem.subtitle,
+        content: oldItem.content,
+        vettedDate: oldItem.vettedDate,
+        tags: oldItem.Tags ? oldItem.Tags.map(tag => tag.tag) : null,
+        updatedAt: new Date(),
+      });
+  
       return item;
     } catch (err) {
       throw new Error('Failed to update knowledge item: ' + err.message);
     }
   }
+  
 
   delete = async (id) => {
     try {
