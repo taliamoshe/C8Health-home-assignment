@@ -159,6 +159,39 @@ class KnowledgeService {
     }
   }
 
+  filterByTags = async (tagList) => {
+    const tagRecords = await Tag.findAll({
+      where: { tag: tagList },
+      include: {
+        model: KnowledgeItem,
+        through: { attributes: [] }
+      }
+    });
+  
+    if (tagRecords.length !== tagList.length) {
+      throw new Error("Not all tags were found in the database");
+    }
+  
+    const itemCounts = {};
+    tagRecords.forEach(tag => {
+      tag.KnowledgeItems.forEach(item => {
+        itemCounts[item.KnowledgeItem_id] = (itemCounts[item.KnowledgeItem_id] || 0) + 1;
+      });
+    });
+  
+    const matchingItemIds = Object.entries(itemCounts)
+      .filter(([_, count]) => count === tagList.length)
+      .map(([id]) => parseInt(id));
+  
+    const items = await KnowledgeItem.findAll({
+      where: { KnowledgeItem_id: matchingItemIds },
+      include: Tag,
+      distinct: true
+    });
+  
+    return items;
+  };
+  
 }
 
 

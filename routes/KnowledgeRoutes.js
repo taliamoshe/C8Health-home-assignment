@@ -8,6 +8,7 @@ const service = new KnowledgeService();
 const controller = new KnowledgeController(service);
 
 router.post('/v1/', validate, controller.create);  // Create new knowledge item
+router.get('/v1/filter-by-tags', controller.filterByTags); // example: GET /v1/filter-by-tags?tags=cardiology&tags=pediatrics
 router.get('/v1/', controller.getAll);  // Get all knowledge items
 router.get('/v1/:id', controller.getById);  // Get knowledge item by ID
 router.get('/v1/tag/:tag', controller.findByTag);  // Get knowledge items by tag

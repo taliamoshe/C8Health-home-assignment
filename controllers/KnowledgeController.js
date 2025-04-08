@@ -106,6 +106,18 @@ class KnowledgeController {
       res.status(status).json({ message: 'Error retrieving version history', error: err.message });
     }
   }
+
+  filterByTags = async (req, res) => {
+  try {
+    const tags = Array.isArray(req.query.tags) ? req.query.tags : [req.query.tags];
+    const items = await this.service.filterByTags(tags);
+    res.status(200).json(items);
+  } catch (err) {
+    logger.error('Error filtering items by tags: ' + err.message);
+    res.status(500).json({ message: 'Error filtering items by tags', error: err.message });
+  }
+}
+
   
 }
 
