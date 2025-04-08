@@ -69,6 +69,10 @@ class KnowledgeService {
     const item = await KnowledgeItem.findOne({ where: { KnowledgeItem_id: id } });
     if (!item) return null; // there is no item with this ID, nothing to delete
 
+    const previousVersion = await VersionHistory.findOne({ where: { KnowledgeItem_id: id } }); //checks if there is other version
+    if (previousVersion) {
+      await previousVersion.destroy();
+  }
     await item.destroy();
     return item;
   }
