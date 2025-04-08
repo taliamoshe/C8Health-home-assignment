@@ -6,11 +6,11 @@ const app = express();
 app.use(express.json());
 
 const config = require('./config/config'); 
-const KnowledgeRoutes = require('./routes/KnowledgeRoutes');
+const KnowledgeRoutes = require('./routes/knowledgeRoutes');
 app.use('/home_assigment', KnowledgeRoutes);
 
 const generateSampleData = require('./generateSampleData'); // Adjust the path as needed
-const { sequelize } = require('./models'); // Import sequelize to sync the database
+const { sequelize } =  require('./models'); // Import sequelize to sync the database
 
 async function startUp() {
     try {

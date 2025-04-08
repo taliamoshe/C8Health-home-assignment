@@ -1,0 +1,31 @@
+{"level":"warn","message":"Knowledge item with ID 2 not found","timestamp":"2025-04-06T08:22:27.688Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 23","timestamp":"2025-04-06T08:22:31.455Z"}
+{"level":"info","message":"Knowledge item with ID 23 deleted successfully","timestamp":"2025-04-06T08:22:36.116Z"}
+{"level":"warn","message":"Knowledge item with ID 2 not found to delete","timestamp":"2025-04-06T08:22:39.981Z"}
+{"level":"error","message":"Error creating knowledge item: SQLITE_BUSY: database is locked","timestamp":"2025-04-07T18:43:37.346Z"}
+{"level":"info","message":"Knowledge item created: Version Test","timestamp":"2025-04-08T06:46:33.936Z"}
+{"level":"error","message":"Error updating knowledge item: Cannot destructure property 'tags' of 'data' as it is undefined.","timestamp":"2025-04-08T06:48:02.889Z"}
+{"level":"error","message":"Error updating knowledge item: Cannot read properties of undefined (reading 'destroy')","timestamp":"2025-04-08T06:52:21.064Z"}
+{"level":"warn","message":"Knowledge item with ID 103 not found to update","timestamp":"2025-04-08T07:22:03.491Z"}
+{"level":"warn","message":"Knowledge item with ID 103 not found","timestamp":"2025-04-08T07:23:19.249Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 1","timestamp":"2025-04-08T07:23:23.947Z"}
+{"level":"error","message":"Error updating knowledge item: Cannot read properties of undefined (reading 'destroy')","timestamp":"2025-04-08T07:24:12.820Z"}
+{"level":"info","message":"Knowledge item created: Version Test","timestamp":"2025-04-08T07:28:16.650Z"}
+{"level":"error","message":"Error updating knowledge item: Cannot destructure property 'tags' of 'data' as it is undefined.","timestamp":"2025-04-08T07:28:57.401Z"}
+{"level":"info","message":"Knowledge item created: Version Test","timestamp":"2025-04-08T07:41:14.880Z"}
+{"level":"info","message":"Fetched knowledge item with ID: 304","timestamp":"2025-04-08T07:41:45.824Z"}
+{"level":"warn","message":"Knowledge item with ID 1 not found to update","timestamp":"2025-04-08T07:42:01.448Z"}
+{"level":"error","message":"Error updating knowledge item: Cannot destructure property 'tags' of 'data' as it is undefined.","timestamp":"2025-04-08T07:42:22.982Z"}
+{"level":"info","message":"Knowledge item created: Version Test","timestamp":"2025-04-08T07:45:45.897Z"}
+{"level":"error","message":"Error updating knowledge item: Cannot destructure property 'tags' of 'data' as it is undefined.","timestamp":"2025-04-08T07:46:19.975Z"}
+{"level":"error","message":"Error updating knowledge item: Cannot destructure property 'tags' of 'data' as it is undefined.","timestamp":"2025-04-08T07:46:38.557Z"}
+{"level":"error","message":"Error updating knowledge item: Cannot read properties of undefined (reading 'findOne')","timestamp":"2025-04-08T07:47:32.674Z"}
+{"level":"info","message":"Knowledge item created: Version Test","timestamp":"2025-04-08T07:55:17.975Z"}
+{"level":"error","message":"Error updating knowledge item: oldItem is not defined","timestamp":"2025-04-08T07:55:38.520Z"}
+{"level":"error","message":"Error updating knowledge item: oldItem is not defined","timestamp":"2025-04-08T07:55:53.170Z"}
+{"level":"error","message":"Error updating knowledge item: oldItem is not defined","timestamp":"2025-04-08T08:01:03.997Z"}
+{"level":"info","message":"Knowledge item created: Version Test","timestamp":"2025-04-08T08:01:42.880Z"}
+{"level":"error","message":"Error updating knowledge item: SQLITE_ERROR: no such table: main.KnowledgeItem","timestamp":"2025-04-08T08:01:56.559Z"}
+{"level":"info","message":"Knowledge item created: Version Test","timestamp":"2025-04-08T08:13:04.836Z"}
+{"level":"info","message":"Knowledge item with ID 101 updated successfully","timestamp":"2025-04-08T08:13:16.487Z"}
+{"level":"error","message":"Error deleting knowledge item: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed","timestamp":"2025-04-08T08:14:40.444Z"}
