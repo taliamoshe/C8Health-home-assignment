@@ -7,13 +7,13 @@ Built with **Node.js**, **Express**, **Sequelize**, and **SQLite**.
 git clone https://github.com/taliamoshe/C8Health-home-assignment
 cd C8Health-home-assignment
 
-# Install dependencies
+2. Install dependencies
 npm install 
 
-# Run database migrations
+3. Run database migrations
 npx sequelize-cli db:migrate
 
-# Run the server
+4. Run the server
 node server.js / npx nodemon server.js
 
 # Tech Stack & Database Choice
@@ -22,6 +22,9 @@ ORM: Sequelize
 Database: SQLite
 Validation: Joi
 Testing: Manual testing with curl or Postman
+
+**I used SQLite because it's simple and works well for small projects.
+For applications that require scalability, concurrent writes, or deployment to multiple instances, I would use a database like PostgreSQL, MySQL, or MongoDB.**
 
 # API Design Overview
 CREATE: /home_assigment/v1/                     - POST    create a new knowledge item
@@ -37,7 +40,7 @@ DELETE: /home_assigment/v1/:id                  - DELETE  delete item by ID
 
 
 # Validation
-Joi schema ensures each request contains:
+Each request to create or update an item is validated using Joi, and must include:
 title (string, required)
 subtitle (string, required)
 vettedDate (date, required)
@@ -49,7 +52,8 @@ Indexes are automatically created on primary keys (`KnowledgeItem_id`, `tag_id`)
 The `tag` field is also indexed as a `UNIQUE` constraint to prevent duplicates and allow fast lookup.
 
 # Versioning
-Each time a knowledge item is updated, a copy of its previous state is saved to a separate VersionHistory table. The endpoint /home_assigment/v1/:id/version allows retrieving past versions of a specific item.
+Each time a knowledge item is updated, a copy of its previous state is saved to a separate VersionHistory table. The endpoint 
+/home_assigment/v1/:id/version allows retrieving past versions of a specific item.
 
 # Bonus Features
 Version history tracking
@@ -85,6 +89,6 @@ curl -X DELETE http://localhost:3000/home_assigment/v1/100
 # Entity-Relationship Diagram (ERD)
 ![ERD](images/knowledge-item-erd.png)
 
- 
+
 # Author
 Created by Talia Moshe
